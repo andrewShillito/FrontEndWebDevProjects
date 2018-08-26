@@ -31,7 +31,6 @@ function changeSingle(index){
 }
 
 function fadeOut(ele){
-  // ele.style.backgroundColor = '#232323';
   var fadeEffect= setInterval(function(){
     if (!ele.style.opacity){
       ele.style.opacity = 1;
@@ -55,7 +54,6 @@ for (var i = 0; i< squares.length;i++){
       }
       else{
         fadeOut(this);
-        // this.style.backgroundColor = '#232323';
         document.querySelector('#retry').style.visibility = 'visible';
       }
     }
@@ -65,7 +63,6 @@ for (var i = 0; i< squares.length;i++){
 function gameOver(){
   for (var i = 0; i<squares.length; i++){
     fadeIn(squares[i]);
-    // squares[i].style.backgroundColor = answer;
   }
   document.querySelector("#header").style.backgroundColor = answer;
   document.querySelector('#retry').textContent = 'Correct!';
@@ -99,8 +96,6 @@ function resetGame(){
   for (var i = 0; i<squares.length; i++){
     squares[i].style.opacity = '0';
   }
-    // if (parseFloat(squares[i].style.opacity) < 1){
-    //   squares[i].style.opacity = '1';
   for (var j = 0; j<squares.length; j++){
     fadeIn(squares[j]);
   }
