@@ -1,7 +1,3 @@
-// var userInput = $('div input[type="text"]');
-// var h1 = $('h1');
-// var listItems = $('li');
-
 $('div input[type="text"]').on('keypress', function(event){
   if (event.which === 13){
     newTodo($('div input[type="text"]').val());

@@ -6,7 +6,6 @@ var reset = btnList[2];
 var pScores = document.querySelector('h1');
 var pOneScore = 0
 var pTwoScore = 0
-// var pTwoCount = document.querySelectorAll()
 var h2 = document.querySelector('h2');
 var numLimitDisplay = document.querySelector('span');
 var numLimit = 5;
@@ -40,57 +39,13 @@ pTwoBtn.addEventListener('click', function(){
 });
 
 reset.addEventListener('click', function(){
-  // resetGame();
   reset2()
 });
 
-// function resetGame(){
-//   h2.innerHTML = "Playing to: <span id=\"numLimitDisplay\">5</span>"
-//   pScores.textContent = "0 to 0";
-//   pOneScore = 0;
-//   pTwoScore = 0;
-//   gameWon = false;
-//   var end = document.getElementById('end');
-//   var winName = document.getElementById('winName');
-//   if (end){
-//     document.body.removeChild(end);
-//   }
-//   if (winName){
-//     document.body.removeChild(winName);
-//   }
-//   if (limitChange){
-//     limitChange = false;
-//     numLimit = 5;
-//   }
-// }
 
 function reset2(){
   window.location.reload();
 }
-
-// function reset3(){
-//   h2.textContent = "Playing to: 5";
-//   pScores.textContent = "0 to 0";
-//   pOneScore = 0;
-//   pTwoScore = 0;
-//   gameWon = false;
-//   var end = document.getElementById('end');
-//   var winName = document.getElementById('winName');
-//   if (end){
-//     document.body.removeChild(end);
-//   }
-//   if (winName){
-//     document.body.removeChild(winName);
-//   }
-//   if (limitChange){
-//     var temp = numInput.innerHTML;
-//     numInput.innerHTML = "";
-//     numInput.innerHTML = temp;
-//     numInput.value = '';
-//     limitChange = false;
-//     numLimit = 5;
-//   }
-// }
 
 numInput.addEventListener("change", function(){
   if (this.value !== undefined){

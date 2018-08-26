@@ -8,25 +8,6 @@
     </script>
     <script type="text/paperscript" canvas="canvas">
 
-    // var myStyle = {
-    //   fillColor: '#00ffff'
-    // };
-    //
-    //   function make(){
-    //     var circle = new Path.Circle(view.size*Point.random(), 100);
-    //     circle.fillColor = {hue: 360*Math.random(), saturation: 1, brightness: 1};
-    //     // console.log(circle.bounds.width/2);
-    //     return circle;
-    //   }
-    //   var circle = make();
-    //   var dest = view.size*Point.random();
-    //
-    //   function onFrame(event){
-    //     var vector = dest - circle.position;
-    //     while (vector.length>5);
-    //       circle.position += vector/30;
-    //   }
-
       var sounds = ['assets/audio/bubbles.mp3',
       'assets/audio/clay.mp3',
       'assets/audio/confetti.mp3',
@@ -80,7 +61,6 @@
         for (var i = 97; i < 123; i++){
           arr.push(String.fromCharCode(i));
         }
-        // console.log(arr);
         return arr;
       }
 
@@ -116,7 +96,6 @@
 
       function onFrame(event){
         var temp = project.activeLayer.children.length;
-        // console.log(temp);
         for (var i = 0; i < circleArr.length; i++){
           circleArr[i].fillColor.hue+=1;
           circleArr[i].scale(.9);
@@ -127,23 +106,6 @@
           }
         }
       }
-
-      // var gridStyle = makeStyle();
-
-      // function Grid(){
-      //   for (var x = 0; x<=1000; x+=50){
-      //     for (var y = 0; y<=1000; y+=50){
-      //       var circle = new Path.Circle(new Point(x, y), 10)
-      //       circle.style = gridStyle[y];
-      //       // circle.fillColor = 'white';
-      //     }
-      //   }
-      // }
-      // Grid();
-
-      // var C = Path.Circle(new Point(0, 0), 50);
-      // C.fillColor = 'white';
-
 
     </script>
     <style media="screen">
