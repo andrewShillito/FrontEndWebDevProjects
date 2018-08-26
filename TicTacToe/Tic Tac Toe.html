@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <style media="screen">
+      h1{
+        text-align: center;
+        font-size: 4em;
+      }
+      table{
+        margin-top: 7%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 600px;
+      }
+      td{
+        margin: auto;
+        height: 200px;
+        width: 100px;
+        font-size: 7em;
+      }
+      .row1{
+        border-bottom: 1px solid black;
+      }
+      .rowCenter{
+        border: 1px solid black;
+        border-top: none;
+      }
+      .row2{
+        border-bottom: 1px solid black;
+      }
+      .row2Center{
+        border: 1px solid black;
+        border-top: none;
+      }
+      .row3Center{
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+      }
+      .p1{
+        color: lightcoral;
+      }
+      .p2{
+        color: #3498DB;
+      }
+      .p1WinText{
+        color: lightcoral;
+      }
+      .p2WinText{
+        color: #3498DB;
+      }
+      #btn{
+        font-size: 20px;
+        background-color: #4CAF50;
+        padding: 12px 28px;
+        border-radius: 8px;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        width: 20%;
+        margin-left: 40%;
+        margin-right: 40%;
+      }
+      #btn:hover {background-color: #3e8e41}
+      #btn:active {
+        background-color: #3e8e41;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <button id="btn" type="button" name="button">Restart Game</button>
+    <table>
+      <tr>
+        <td class="row1"></td>
+        <td class="row1 rowCenter"></td>
+        <td class="row1"></td>
+      </tr>
+      <tr>
+        <td class="row2"></td>
+        <td class="row2 row2Center"></td>
+        <td class="row2"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="row3Center"></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+  <script src="Tic Tac Toe.js" charset="utf-8"></script>
+</html>

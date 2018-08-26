@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Patatap Project</title>
+    <script src="assets\js\lib\paperjs-v0.11.5\dist\paper-full.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.12/howler.core.min.js">
+    </script>
+    <script type="text/paperscript" canvas="canvas">
+
+    // var myStyle = {
+    //   fillColor: '#00ffff'
+    // };
+    //
+    //   function make(){
+    //     var circle = new Path.Circle(view.size*Point.random(), 100);
+    //     circle.fillColor = {hue: 360*Math.random(), saturation: 1, brightness: 1};
+    //     // console.log(circle.bounds.width/2);
+    //     return circle;
+    //   }
+    //   var circle = make();
+    //   var dest = view.size*Point.random();
+    //
+    //   function onFrame(event){
+    //     var vector = dest - circle.position;
+    //     while (vector.length>5);
+    //       circle.position += vector/30;
+    //   }
+
+      var sounds = ['assets/audio/bubbles.mp3',
+      'assets/audio/clay.mp3',
+      'assets/audio/confetti.mp3',
+      'assets/audio/corona.mp3',
+      'assets/audio/dotted-spiral.mp3',
+      'assets/audio/flash-1.mp3',
+      'assets/audio/flash-2.mp3',
+      'assets/audio/flash-3.mp3',
+      'assets/audio/glimmer.mp3',
+      'assets/audio/moon.mp3',
+      'assets/audio/pinwheel.mp3',
+      'assets/audio/piston-1.mp3',
+      'assets/audio/piston-2.mp3',
+      'assets/audio/piston-3.mp3',
+      'assets/audio/prism-1.mp3',
+      'assets/audio/prism-2.mp3',
+      'assets/audio/prism-3.mp3',
+      'assets/audio/splits.mp3',
+      'assets/audio/squiggle.mp3',
+      'assets/audio/strike.mp3',
+      'assets/audio/suspension.mp3',
+      'assets/audio/timer.mp3',
+      'assets/audio/ufo.mp3',
+      'assets/audio/veil.mp3',
+      'assets/audio/wipe.mp3',
+      'assets/audio/zig-zag.mp3'
+    ];
+      console.log(sounds);
+      var arr = makeString();
+      var obj = buildObj();
+      var dests = buildDest();
+      var songObj = makeSongs();
+
+      var circleArr = [];
+
+
+      function makeSongs(){
+        var obj = {};
+        var sound;
+        var source;
+        for (var i = 0; i<arr.length; i++){
+          source = sounds[i];
+          sound = new Howl({src: [source]});
+          obj[arr[i]] = sound;
+        }
+        return obj;
+      }
+
+      function makeString(){
+        var arr = [];
+        for (var i = 97; i < 123; i++){
+          arr.push(String.fromCharCode(i));
+        }
+        // console.log(arr);
+        return arr;
+      }
+
+      function buildObj(){
+        var obj = {};
+        for(var x = 0; x<arr.length; x++){
+          var randColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+          obj[arr[x]] = {fillColor: randColor};
+        }
+        console.log('obj: ', obj);
+        return obj;
+      }
+
+      function buildDest(){
+        var dests = {};
+        for (var x = 0; x<arr.length; x++){
+          var dest = view.size*Point.random();
+          dests[arr[x]] = dest;
+        }
+        console.log('dests: ', dests);
+        return dests;
+      }
+
+
+      function onKeyDown(event){
+        if (event.key in obj){
+          var circle = Path.Circle(view.size*Point.random(), 200);
+          circle.style = obj[event.key];
+          circleArr.push(circle);
+          songObj[event.key].play();
+        }
+      }
+
+      function onFrame(event){
+        var temp = project.activeLayer.children.length;
+        // console.log(temp);
+        for (var i = 0; i < circleArr.length; i++){
+          circleArr[i].fillColor.hue+=1;
+          circleArr[i].scale(.9);
+          if (circleArr[i].area<1){
+            circleArr[i].remove();
+            circleArr.splice(i, 1);
+            i--;
+          }
+        }
+      }
+
+      // var gridStyle = makeStyle();
+
+      // function Grid(){
+      //   for (var x = 0; x<=1000; x+=50){
+      //     for (var y = 0; y<=1000; y+=50){
+      //       var circle = new Path.Circle(new Point(x, y), 10)
+      //       circle.style = gridStyle[y];
+      //       // circle.fillColor = 'white';
+      //     }
+      //   }
+      // }
+      // Grid();
+
+      // var C = Path.Circle(new Point(0, 0), 50);
+      // C.fillColor = 'white';
+
+
+    </script>
+    <style media="screen">
+      canvas{
+        background-color: black;
+        width: 100%;
+        height: 100%;
+      }
+      body, html{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="300" height="300"></canvas>
+  </body>
+</html>

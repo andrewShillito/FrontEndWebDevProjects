@@ -1,0 +1,100 @@
+body{
+  background-color: #232323;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.square{
+  width: 30%;
+  background-color: purple;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
+  border-radius: 15%;
+  opacity: 1;
+  /* transition: background-color .6s;
+  -webkit-transition: background-color .6s;
+  -moz-transition: background-color .6s; */
+}
+
+.square:hover{
+  box-shadow: 0px 0px 10px white inset;
+}
+
+#container{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1{
+  color: white;
+  margin: 0 auto;
+  padding-bottom: 0px;
+  font-size: 4em;
+}
+
+h2{
+  color: white;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 2em;
+}
+
+#retry{
+  color: black;
+  visibility: hidden;
+  display: inline-block;
+  width: 20%;
+  font-weight: bold;
+  padding: 0 5px;
+  font-size: 1em;
+}
+
+#nav{
+  background-color: white;
+  height: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+#header{
+  background-color: steelblue;
+}
+
+button{
+  border: none;
+  background-color: white;
+  height: 100%;
+  margin: 0 auto;
+  font-weight: bold;
+  padding: 0 5px;
+  font-size: 1em;
+  color: steelblue;
+  outline: none;
+  transition: background-color .3s;
+  -webkit-transition: background-color .3s;
+  -moz-transition: background-color: .3s;
+}
+
+button:hover{
+  background-color: steelblue;
+  color: white;
+}
+
+.selected{
+  background-color: steelblue;
+  color: white;
+}
+
+#easy, #hard{
+  margin-right: 0px;
+}
+
+.easyMode{
+  display: none;
+}
