@@ -1,2 +1,4 @@
 # Course Projects - The Web Developer Bootcamp
-Projects made during Web Developer Bootcamp taught by Colt Steele on Udemy
+Selected Projects made during Web Developer Bootcamp taught by Colt Steele
+& the Python & Django Fullstack Web Development Bootcamp taught by Jose
+Portilla on Udemy.
