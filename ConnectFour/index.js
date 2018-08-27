@@ -42,13 +42,14 @@ $(document).ready(function(){
 
   document.addEventListener('click', function(e){
     // console.log(e);
-    console.log($(e.target).tagName);
+    // console.log($(e.target));
     // console.log(e.target.parent().parent().tagName);
+    // console.log(gameWon);
     if (gameWon){
       //need to check for presence of reset button and if that is what was clicked
       return false;
     }
-    if($(e.target).tagName=="BUTTON"){
+    if($(e.target)["0"].tagName==="BUTTON"){
       for (let i = 0; i<7; i++){
         for (let j = 0; j<7; j++){
           // console.log(e.target)
