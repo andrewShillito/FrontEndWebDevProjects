@@ -47,12 +47,7 @@ $(document).ready(function(){
     if($(e.target)["0"].tagName==="BUTTON"){
       for (let i = 0; i<7; i++){
         for (let j = 0; j<7; j++){
-          // console.log(e.target)
-          // console.log(table.eq(i).find('td').eq(j).find('button')['0']);
-          // console.log(e.target);
-          // console.log(table.eq(i).find('td').eq(j).find('button')['0']===e.target);
           if (table.eq(i).find('td').eq(j).find('button')['0']===e.target){
-            // console.log("Success:", table.eq(i).eq(j));
             if (changeColor(i, j, getActivePlayerColor())){
               gameWon = horizontalWinCheck() || verticalWinCheck() || diagonalWinCheck();
               if (gameWon){
